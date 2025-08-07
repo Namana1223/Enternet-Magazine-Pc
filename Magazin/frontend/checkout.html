@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Începe aventura! -->
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizare comandă - PC Components</title>
+  <link rel="stylesheet" href="checkout.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="home-link"><a href="index.html">Acasă</a></div>
+  <div class="header">
+    <h1>💳 Finalizare comandă</h1>
+  </div>
+
+  <div class="checkout-container">
+    <div class="back-link">
+      <a href="cart.html">&larr; Înapoi la coș</a>
+    </div>
+    
+    <div class="form-section">
+      <h2>📝 Informații personale</h2>
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label for="firstName">Prenume *</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="lastName">Nume *</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Telefon *</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="address">Adresa de livrare *</label>
+          <textarea id="address" name="address" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="city">Oraș *</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="payment">Metoda de plată *</label>
+          <select id="payment" name="payment" required>
+            <option value="">Selectează metoda de plată</option>
+            <option value="card">Card bancar</option>
+            <option value="cash">Numerar la livrare</option>
+            <option value="transfer">Transfer bancar</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="submit-btn">Finalizează comanda</button>
+      </form>
+    </div>
+    
+    <div class="order-summary">
+      <h2>🛒 Sumar comandă</h2>
+      <div class="order-item">
+        <img src="https://darwin.md/media/550707/conversions/placa-video-gigabyte-geforce-rtx-4060-windforce-oc-8-gb-276842-preview-webp.png" alt="RTX 4060">
+        <div class="order-item-info">
+          <h4>Placă video RTX 4060</h4>
+          <p>Cantitate: 1</p>
+        </div>
+        <p>7.500 MDL</p>
+      </div>
+      
+      <div class="order-item">
+        <img src="https://geek.md/image/catalog/products/16971-G/HyperX%20Alloy%20FPS%20RGB%20RU%20(HX-KB1SS2-RU)%20(5).webp" alt="Tastatură">
+        <div class="order-item-info">
+          <h4>Tastatură mecanică RGB</h4>
+          <p>Cantitate: 1</p>
+        </div>
+        <p>850 MDL</p>
+      </div>
+      
+      <div class="total">
+        <h3>Total comandă:</h3>
+        <div class="amount">8.350 MDL</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Afișează produsele din coș în checkout
+    function displayCheckoutItems() {
+      const orderSummary = document.querySelector('.order-summary');
+      if (!orderSummary || !cart.cart.length) {
+        window.location.href = 'cart.html';
+        return;
+      }
+      
+      // Golește conținutul existent
+      const existingItems = orderSummary.querySelectorAll('.order-item');
+      existingItems.forEach(item => item.remove());
+      
+      // Adaugă produsele din coș
+      cart.cart.forEach(item => {
+        const orderItem = document.createElement('div');
+        orderItem.className = 'order-item';
+        orderItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'">
+          <div class="order-item-info">
+            <h4>${item.name}</h4>
+            <p>Cantitate: ${item.quantity}</p>
+          </div>
+          <p>${item.price}</p>
+        `;
+        orderSummary.insertBefore(orderItem, orderSummary.querySelector('.total'));
+      });
+      
+      // Actualizează totalul
+      const totalElement = orderSummary.querySelector('.amount');
+      if (totalElement) {
+        totalElement.textContent = cart.getTotal().toFixed(2) + ' MDL';
+      }
+    }
+    
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (cart.cart.length === 0) {
+        alert('Coșul este gol! Adaugă produse înainte de a finaliza comanda.');
+        return;
+      }
+      
+      // Simulare procesare comandă
+      const submitBtn = document.querySelector('.submit-btn');
+      submitBtn.textContent = 'Se procesează...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        // Golește coșul după comandă
+        cart.clearCart();
+        alert('Comanda a fost finalizată cu succes! Vei primi un email de confirmare în curând.');
+        window.location.href = 'index.html';
+      }, 2000);
+    });
+    
+    // Afișează produsele la încărcarea paginii
+    displayCheckoutItems();
+  </script>
+</body>
+</html>

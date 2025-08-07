@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
+  <meta name="HandheldFriendly" content="true">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>PC Components - Magazin Online</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--  Navbar pentru desktop -->
+  <header>
+    <div class="navbar">
+      <ul>
+        <li class="logo">
+          <img src="assets/img/Logo_pc.png" alt="Logo magazin" />
+        </li>
+        <div class="nav-center">
+          <li><a href="cartonase.html" title="Produse"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg></a></li>
+          <li><a href="login.html" title="Autentificare"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg></a></li>
+          <li><a href="register.html" title="Înregistrare"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M720-400v-120H600v-80h120v-120h80v120h120v80H800v120h-80Zm-360-80q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z"/></svg></a></li>
+          <li><a href="cart.html" title="Coș"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#703BCC"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></a></li>
+        </div>
+      </ul>
+    </div>
+  </header>
+
+  <!--  Navbar pentru mobil (jos) -->
+  <nav class="mobile-navbar">
+    <a href="index.html" class="mobile-nav-item" title="Acasă">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+</a>
+    <a href="cartonase.html" class="mobile-nav-item" title="Produse">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+      <span class="mobile-nav-text">Produse</span>
+    </a>
+    <a href="cart.html" class="mobile-nav-item cart-icon" title="Coș">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/>
+      <span class="mobile-nav-text">Coș</span>
+    </a>
+    <a href="login.html" class="mobile-nav-item" title="Cont">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M222-255q63-44 125-67.5T480-346q71 0 133.5 23.5T739-255q44-54 62.5-109T820-480q0-145-97.5-242.5T480-820q-145 0-242.5 97.5T140-480q0 61 19 116t63 109Zm257.814-195Q422-450 382.5-489.686q-39.5-39.686-39.5-97.5t39.686-97.314q39.686-39.5 97.5-39.5t97.314 39.686q39.5 39.686 39.5 97.5T577.314-489.5q-39.686 39.5-97.5 39.5Zm.654 370Q398-80 325-111.5q-73-31.5-127.5-86t-86-127.266Q80-397.532 80-480.266T111.5-635.5q31.5-72.5 86-127t127.266-86q72.766-31.5 155.5-31.5T635.5-848.5q72.5 31.5 127 86t86 127.032q31.5 72.532 31.5 155T848.5-325q-31.5 73-86 127.5t-127.032 86q-72.532 31.5-155 31.5ZM480-140q55 0 107.5-16T691-212q-51-36-104-55t-107-19q-54 0-107 19t-104 55q51 40 103.5 56T480-140Zm0-370q34 0 55.5-21.5T557-587q0-34-21.5-55.5T480-664q-34 0-55.5 21.5T403-587q0 34 21.5 55.5T480-510Zm0-77Zm0 374Z"/></svg>
+      <span class="mobile-nav-text">Cont</span>
+    </a>
+  </nav>
+
+  <!--  Animated Background -->
+  <div id="particles-js"></div>
+  
+  <!--  Floating Chat Bubble -->
+  <div class="floating-chat" onclick="openChat()" title="Need help? Chat with us!"></div>
+
+  <!--  Enhanced Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-animation"></div>
+    <div class="hero-mascot-container">
+      <!--  Cyber Cat Mascot SVG will be injected here -->
+      <svg id="cyber-cat" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="55" cy="55" rx="50" ry="45" fill="#191924" stroke="#00f2ff" stroke-width="3"/>
+        <ellipse cx="40" cy="50" rx="6" ry="10" fill="#fff"/>
+        <ellipse cx="70" cy="50" rx="6" ry="10" fill="#fff"/>
+        <ellipse cx="40" cy="53" rx="2" ry="3" fill="#00f2ff"/>
+        <ellipse cx="70" cy="53" rx="2" ry="3" fill="#00f2ff"/>
+        <ellipse cx="55" cy="75" rx="13" ry="9" fill="#fff"/>
+        <ellipse cx="55" cy="78" rx="7" ry="4" fill="#00f2ff"/>
+        <polygon points="15,30 30,10 25,40" fill="#191924" stroke="#00f2ff" stroke-width="2"/>
+        <polygon points="95,30 80,10 85,40" fill="#191924" stroke="#00f2ff" stroke-width="2"/>
+        <ellipse cx="55" cy="90" rx="20" ry="6" fill="#00f2ff" opacity="0.25"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">✨ PREMIUM TECH STORE</div>
+      <h1 class="hero-title">
+        <span id="typewriter-text">Descoperă Tehnologia de Mâine</span>
+        <span class="typewriter-cursor">|</span>
+      </h1>
+      <span class="title-highlight">PC Components</span>
+      <span class="title-subtitle">Viitorul tehnologiei</span>
+      <p class="hero-subtitle glow-text">Componente PC premium, periferice gaming și accesorii de ultimă generație</p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="5000">0</span>
+          <span class="stat-label">Produse</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="10000">0</span>
+          <span class="stat-label">Clienți</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="99">0</span>
+          <span class="stat-label">% Satisfacție</span>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <a href="cartonase.html" class="btn btn-primary" title="Explorează Catalogul😁">
+  Explorează Catalogul
+  <div class="btn-glow"></div>
+</a>
+        <a href="#featured" class="btn btn-secondary" title="Produse Premium✨">
+  Produse Premium
+</a>
+      </div>
+    </div>
+    <div class="hero-decoration">
+      <div class="floating-icon">💻</div>
+      <div class="floating-icon">🖱️</div>
+      <div class="floating-icon">⌨️</div>
+      <div class="floating-icon">🖥️</div>
+      <div class="floating-icon">🔧</div>
+    </div>
+    <!--  Cart Drone Animation -->
+    <div class="cart-drone" id="cartDrone">
+    </div>
+    
+    <!--  Bottom GPU with Arrow -->
+    <div class="bottom-gpu" id="bottomGpu">
+      <div class="gpu-container">
+        <div class="gpu-glow"></div>
+      </div>
+      <div class="gpu-trail"></div>
+    </div>
+  </section>
+
+  <section id="featured" class="featured-products">
+    <h2>⭐ Produse Populare</h2>
+    <div class="product-grid" id="featured-products-grid">
+      <!--  Produsele vor fi încărcate dinamic din JavaScript -->
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <button id="load-more-btn" class="btn btn-secondary hidden" onclick="loadMoreProducts()" title="Încarcă mai multe produse">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#703BCC"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zm-9 3.86L5 16V8l7-4 7 4v8l-7 3.86z"/></svg>
+</button>
+    </div>
+  </section>
+
+  <!--  Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-bg"></div>
+    <div class="newsletter-content">
+      <div class="newsletter-icon">📧</div>
+      <h2 class="newsletter-title">Fii primul care află despre ofertele noastre!</h2>
+      <p class="newsletter-subtitle">Abonează-te la newsletter-ul nostru și primește 10% reducere la prima comandă</p>
+      <div class="newsletter-form">
+        <div class="input-group">
+          <input type="email" placeholder="Adresa ta de email" class="newsletter-input">
+          <button class="newsletter-btn" title="Abonează-te la newsletter">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#703BCC"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 8.01V6h16zM4 20v-9.99l8 6.99 8-6.99V20H4z"/></svg>
+  <div class="btn-particles"></div>
+</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{{ ... }}
+
+  <footer>
+    <p>&copy; 2025 PC Components. Toate drepturile rezervate.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script>
+    // Funcționalitate meniu mobil
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-menu').classList.toggle('active');
+      this.classList.toggle('active');
+    });
+  </script>
+  <script>
+    let allProducts = [];
+    let currentProductIndex = 0;
+    const productsPerLoad = 12; // 3 rânduri x 4 produse
+
+    // Funcție pentru încărcarea produselor din JSON
+    async function loadFeaturedProducts() {
+      try {
+        const response = await fetch('products.json');
+        allProducts = await response.json();
+        
+        // Afișează doar primele 12 produse (3 rânduri x 4 produse)
+        displayProducts(0, 12);
+        
+        // Arată butonul "Încarcă mai multe" dacă sunt mai multe produse
+        if (allProducts.length > 12) {
+          document.getElementById('load-more-btn').style.display = 'inline-block';
+        }
+      } catch (error) {
+        console.error('Eroare la încărcarea produselor:', error);
+        // Fallback la produse statice
+        displayStaticProducts();
+      }
+    }
+
+    // Funcție pentru afișarea produselor
+    function displayProducts(startIndex, count) {
+      const grid = document.getElementById('featured-products-grid');
+      const endIndex = Math.min(startIndex + count, allProducts.length);
+      
+      for (let i = startIndex; i < endIndex; i++) {
+        const product = allProducts[i];
+        const productCard = createProductCard(product);
+        grid.appendChild(productCard);
+      }
+      
+      currentProductIndex = endIndex;
+      
+      // Ascunde butonul dacă nu mai sunt produse
+      if (currentProductIndex >= allProducts.length) {
+        document.getElementById('load-more-btn').style.display = 'none';
+      }
+    }
+
+    // Funcție pentru crearea unui card de produs
+    function createProductCard(product) {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.style.cursor = 'pointer';
+      
+      card.innerHTML = `
+        <div class="product-image-container" onclick="openProductDetail(${product.id})">
+          <img src="${product.image_url}" alt="${product.name}" width="300" height="200" referrerpolicy="no-referrer">
+        </div>
+        <h3 onclick="openProductDetail(${product.id})">${product.name}</h3>
+        <p>Preț: ${product.price} MDL</p>
+        <button onclick="addToCartFromCatalog('${product.name}', '${product.image_url}', '${product.price} MDL')">
+          🛒 Adaugă în coș
+        </button>
+      `;
+      
+      return card;
+    }
+
+    // Funcție pentru încărcarea mai multor produse
+    function loadMoreProducts() {
+      displayProducts(currentProductIndex, 12);
+    }
+
+    // Funcție pentru deschiderea paginii de detalii produs
+    function openProductDetail(productId) {
+      window.location.href = `product.html?id=${productId}`;
+    }
+
+    // Fallback la produse statice
+    function displayStaticProducts() {
+        const grid = document.getElementById('featured-products-grid');
+        const staticProducts = [
+        ];
+
+        staticProducts.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <img src="${product.image_url}" alt="${product.name}" width="300" height="200" referrerpolicy="no-referrer">
+                <h3>${product.name}</h3>
+                <p>Preț: ${product.price} MDL</p>
+                <button onclick="addToCartFromCatalog('${product.name}', '${product.image_url}', '${product.price} MDL')">
+                    🛒 Adaugă în coș
+                </button>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+
+
+
+    // Navbar scroll behavior
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down - hide navbar
+        navbar.style.transform = 'translateY(-100%)';
+      } else {
+        // Scrolling up - show navbar
+        navbar.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+
+    // Initialize spectacular effects when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      initSpectacularEffects();
+      loadFeaturedProducts();
+    });
+
+    // Funcții pentru efecte spectaculoase
+    function initSpectacularEffects() {
+      // Counter animation
+      animateCounters();
+      
+      // Particles effect
+      createParticles();
+      
+      // Parallax scrolling
+      initParallax();
+      
+      // Newsletter functionality
+      initNewsletterForm();
+      
+      // Intersection Observer pentru animații
+      initScrollAnimations();
+    }
+
+    // Animație pentru contoare
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stat-number');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const start = performance.now();
+            
+            function updateCounter(currentTime) {
+              const elapsed = currentTime - start;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              const current = Math.floor(progress * target);
+              counter.textContent = current;
+              
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = target;
+              }
+            }
+            
+            requestAnimationFrame(updateCounter);
+            observer.unobserve(counter);
+          }
+        });
+      });
+      
+      counters.forEach(counter => observer.observe(counter));
+    }
+
+    // Sistem de particule
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles-js');
+      
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.cssText = `
+          position: absolute;
+          width: ${Math.random() * 4 + 1}px;
+          height: ${Math.random() * 4 + 1}px;
+          background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2});
+          border-radius: 50%;
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          animation: float ${Math.random() * 10 + 5}s linear infinite;
+          animation-delay: ${Math.random() * 5}s;
+        `;
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Parallax scrolling
+    function initParallax() {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.floating-icon');
+        
+        parallaxElements.forEach((element, index) => {
+          const speed = (index + 1) * 0.5;
+          element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+        });
+      });
+    }
+
+    // Newsletter subscription functionality
+    function initNewsletterForm() {
+      const newsletterBtn = document.querySelector('.newsletter-btn');
+      const newsletterInput = document.querySelector('.newsletter-input');
+      
+      if (newsletterBtn && newsletterInput) {
+        newsletterBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const email = newsletterInput.value.trim();
+          
+          if (email && isValidEmail(email)) {
+            // Simulare abonare newsletter
+            newsletterBtn.innerHTML = '<span>✅ Abonat cu succes!</span>';
+            newsletterBtn.classList.add('success');
+            newsletterBtn.classList.remove('reset');
+            newsletterInput.value = '';
+            
+            // Resetare după 3 secunde
+            setTimeout(() => {
+              newsletterBtn.innerHTML = '<span>Abonează-te</span>';
+              newsletterBtn.classList.remove('success');
+              newsletterBtn.classList.add('reset');
+            }, 3000);
+            
+            // Afișare mesaj de confirmare
+            showNotification('Te-ai abonat cu succes! Vei primi 10% reducere la prima comandă.', 'success');
+          } else {
+            showNotification('Te rog să introduci o adresă de email validă.', 'error');
+          }
+        });
+      }
+    }
+    
+    // Validare email
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+    // Sistem de notificări
+    function showNotification(message, type) {
+      const notification = document.createElement('div');
+      notification.className = `notification ${type}`;
+      notification.innerHTML = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        border-radius: 10px;
+        color: white;
+        font-weight: 600;
+        z-index: 10000;
+        animation: slideInRight 0.5s ease;
+        max-width: 300px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        ${type === 'success' ? 'background: linear-gradient(135deg, #4CAF50, #45a049);' : 'background: linear-gradient(135deg, #f44336, #d32f2f);'}
+      `;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.5s ease';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 500);
+      }, 4000);
+    }
+
+    // Animații la scroll
+    function initScrollAnimations() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      // Observă cardurile de produse
+      setTimeout(() => {
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach((card, index) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(50px)';
+          card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+          observer.observe(card);
+        });
+      }, 1000);
+    }
+  </script>
+  <script>
+    // --- Typewriter Effect ---
+    document.addEventListener('DOMContentLoaded', function() {
+      const text = "Descoperă Tehnologia de Mâine";
+      const typewriterElement = document.getElementById('typewriter-text');
+      if (typewriterElement) {
+        typewriterElement.textContent = '';
+        let i = 0;
+        function typeWriter() {
+          if (i < text.length) {
+            typewriterElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+          }
+        }
+        setTimeout(typeWriter, 1000);
+      }
+    });
+    
+    // --- Chat Function ---
+    function openChat() {
+      alert('👋 Salut! Cum te putem ajuta astăzi?\n\n📞 Telefon: +373 XX XXX XXX\n📧 Email: support@pccomponents.md\n💬 Chat live: În curând!');
+    }
+
+    // --- Magic Bar Confetti Animation ---
+    document.addEventListener('DOMContentLoaded', function() {
+      const leftEye = document.querySelector('#cyber-cat ellipse[cx="40"][cy="53"]');
+      const rightEye = document.querySelector('#cyber-cat ellipse[cx="70"][cy="53"]');
+      const leftWhite = document.querySelector('#cyber-cat ellipse[cx="40"][cy="50"]');
+      const rightWhite = document.querySelector('#cyber-cat ellipse[cx="70"][cy="50"]');
+      let blinkTimeout;
+      function moveEyes(e) {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percent = Math.max(0, Math.min(1, x / rect.width));
+        // Move blue pupils
+        leftEye.setAttribute('cx', 38 + percent * 4);
+        rightEye.setAttribute('cx', 68 + percent * 4);
+      }
+      function blink() {
+        leftWhite.setAttribute('ry', 2);
+        rightWhite.setAttribute('ry', 2);
+        leftEye.setAttribute('ry', 1);
+        rightEye.setAttribute('ry', 1);
+        setTimeout(() => {
+          leftWhite.setAttribute('ry', 10);
+          rightWhite.setAttribute('ry', 10);
+          leftEye.setAttribute('ry', 3);
+          rightEye.setAttribute('ry', 3);
+        }, 160);
+        blinkTimeout = setTimeout(blink, 3200 + Math.random() * 2000);
+      }
+      if (leftEye && rightEye && leftWhite && rightWhite) {
+        document.addEventListener('mousemove', moveEyes);
+        blinkTimeout = setTimeout(blink, 2500);
+      }
+    });
+  </script>
+  <script>
+  let lastScroll = 0;
+  const nav = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll) {
+      nav.style.top = "-100px";
+    } else {
+      nav.style.top = "0";
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // Parallax Effects for Animated Elements
+  function initParallaxEffects() {
+    const floatingGpu = document.getElementById('floatingGpu');
+    const deliveryDrone = document.getElementById('deliveryDrone');
+    const gamingController = document.getElementById('gamingController');
+    
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const scrollPercent = scrollY / (document.body.scrollHeight - windowHeight);
+      
+      // GPU moves left to right based on scroll
+      if (floatingGpu) {
+        const moveX = scrollPercent * 60; // Move 60% across screen
+        floatingGpu.style.transform = `translateY(-50%) translateX(${moveX}%)`;
+      }
+      
+      // Drone subtle parallax movement
+      if (deliveryDrone) {
+        const droneMove = Math.sin(scrollPercent * Math.PI * 2) * 20;
+        deliveryDrone.style.transform = `translateY(${droneMove}px)`;
+      }
+      
+      // Controller parallax
+      if (gamingController) {
+        const controllerMove = scrollPercent * -30;
+        gamingController.style.transform = `translateY(${controllerMove}px)`;
+      }
+    });
+  }
+  
+  // Cart Drone Animation Effect
+  function initCartDroneEffect() {
+    const cartDrone = document.getElementById('cartDrone');
+    
+    // Add click event to all "Add to Cart" buttons
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('add-to-cart') || 
+          e.target.closest('.add-to-cart')) {
+        
+        const button = e.target.classList.contains('add-to-cart') ? 
+                      e.target : e.target.closest('.add-to-cart');
+        const productCard = button.closest('.product-card');
+        
+        if (productCard && cartDrone) {
+          // Get button position
+          const buttonRect = button.getBoundingClientRect();
+          const cartIcon = document.querySelector('.cart-icon') || 
+                          document.querySelector('[href="cartonase.html"]');
+          
+          if (cartIcon) {
+            const cartRect = cartIcon.getBoundingClientRect();
+            
+            // Position drone at button location
+            cartDrone.style.left = buttonRect.left + 'px';
+            cartDrone.style.top = buttonRect.top + 'px';
+            cartDrone.classList.add('flying');
+            
+            // Animate to cart
+            setTimeout(() => {
+              cartDrone.style.left = cartRect.left + 'px';
+              cartDrone.style.top = cartRect.top + 'px';
+            }, 100);
+            
+            // Hide drone after animation
+            setTimeout(() => {
+              cartDrone.classList.remove('flying');
+              showPowerUp(); // Show power-up effect
+            }, 2000);
+          }
+        }
+      }
+    });
+  }
+  
+  // Power-up Effects
+  function initPowerUpEffects() {
+    let powerUpTimeout;
+    
+    // Show power-up on scroll (random chance)
+    window.addEventListener('scroll', () => {
+      if (Math.random() < 0.001) { // 0.1% chance per scroll
+        showPowerUp();
+      }
+    });
+    
+    // Show power-up on hover over products (small chance)
+    document.addEventListener('mouseenter', (e) => {
+      if (e.target.closest('.product-card')) {
+        if (Math.random() < 0.05) { // 5% chance on product hover
+          showPowerUp();
+        }
+      }
+    }, true);
+  }
+  
+  function showPowerUp() {
+    const powerUp = document.getElementById('powerUp');
+    if (powerUp && !powerUp.classList.contains('active')) {
+      powerUp.classList.add('active');
+      
+      // Remove after animation
+      setTimeout(() => {
+        powerUp.classList.remove('active');
+      }, 1200);
+    }
+  }
+  
+  // Initialize all effects when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    initSpectacularEffects();
+    loadFeaturedProducts();
+    initParallaxEffects();
+    initCartDroneEffect();
+    initPowerUpEffects();
+  });
+
+</script>
+  
+<script>
+// Leagă linkurile din catalog-dropdown la filtrare pe cartonase.html
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.catalog-dropdown .catalog-link').forEach(function(link) {
+    if (link.classList.contains('all')) {
+      link.setAttribute('href', 'cartonase.html');
+      return;
+    }
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const categorie = link.textContent.trim();
+      window.location.href = 'cartonase.html?cat=' + encodeURIComponent(categorie);
+    });
+  });
+});
+</script>
+</body>
+</html>

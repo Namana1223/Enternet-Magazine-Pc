@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalii produs - PC Components</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="product.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <div class="navbar">
+        <ul>
+          <li class="logo">
+            <img src="assets/img/Logo_pc.png" alt="Logo magazin" />
+          </li>
+          <div class="nav-center">
+            <li><a href="index.html" title="Acasă"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a></li>
+<li><a href="cartonase.html" title="Produse"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg></a></li>
+<li><a href="login.html" title="Autentificare"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg></a></li>
+<li><a href="register.html" title="Înregistrare"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M720-400v-120H600v-80h120v-120h80v120h120v80H800v120h-80Zm-360-80q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z"/></svg></a></li>
+<li><a href="cart.html" title="Coș"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#703BCC"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></a></li>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <div class="product-detail-container">
+        <div id="loading" class="loading">
+            <div>🔄 Se încarcă detaliile produsului...</div>
+        </div>
+
+        <div id="product-detail" class="product-detail-card" style="display: none;">
+            <div class="product-header">
+                <h1 id="product-name">Nume produs</h1>
+                <p class="product-category" id="product-category">Categorie</p>
+            </div>
+
+            <div class="product-content">
+                <div class="product-images">
+                    <img id="product-image" class="main-image" src="" alt="Imagine produs">
+                </div>
+
+                <div class="product-info">
+                    <div class="price-section">
+                        <h2 class="price" id="product-price">0 MDL</h2>
+                        <p class="stock-info" id="stock-info">Stoc: 0 bucăți</p>
+                    </div>
+
+                    <div class="specifications">
+                        <h3>📋 Specificații tehnice</h3>
+                        <div class="spec-grid" id="specifications-grid">
+                            <!-- Specificațiile vor fi adăugate dinamic -->
+                        </div>
+                    </div>
+
+                    <div class="add-to-cart-section">
+                        <h3 style="color: white; margin: 0 0 20px 0;">🛒 Adaugă în coș</h3>
+                        
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" class="quantity-input" id="quantity" value="1" min="1" max="99">
+                            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+
+                        <button class="add-to-cart-btn" onclick="addToCart()" title="Adaugă în coș">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#703BCC"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.16 14l.84-2h8.99l.94 2H7.16zM6.16 12l-1.1-2H20V6H6.42l-.94-2H2v2h2l3.6 7.59-1.35 2.44C5.16 16.37 5.5 17 6.16 17h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 30px;">
+                <a href="javascript:history.back()" class="back-btn" title="Înapoi la produse">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#703BCC"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let currentProduct = null;
+
+        // Încărcăm produsul ca pe cafeaua de dimineață!
+        function loadProduct() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            if (!productId) {
+                showError('ID-ul produsului lipsește!');
+                return;
+            }
+
+            // Încărcăm produse din JSON
+            fetch('products.json')
+                .then(response => response.json())
+                .then(products => {
+                    const product = products.find(p => p.id == productId);
+                    
+                    if (!product) {
+                        showError('Produsul nu a fost găsit!');
+                        return;
+                    }
+
+                    displayProduct(product);
+                })
+                .catch(error => {
+                    console.error('Eroare la încărcarea produselor:', error);
+                    showError('Eroare la încărcarea produsului!');
+                });
+        }
+
+        // Afișăm produsul ca să nu fie timid!
+        function displayProduct(product) {
+            currentProduct = product;
+            
+            // Ascunde loading și afișează produsul
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('product-detail').style.display = 'block';
+
+            // Setează informațiile de bază
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-category').textContent = product.category;
+            document.getElementById('product-image').src = product.image_url;
+            document.getElementById('product-image').alt = product.name;
+            document.getElementById('product-price').textContent = `${product.price} MDL`;
+            document.getElementById('stock-info').textContent = `Stoc: ${product.stock} bucăți`;
+
+            // Afișează specificațiile
+            const specGrid = document.getElementById('specifications-grid');
+            specGrid.innerHTML = '';
+
+            if (product.attributes && Object.keys(product.attributes).length > 0) {
+                Object.entries(product.attributes).forEach(([key, value]) => {
+                    const specItem = document.createElement('div');
+                    specItem.className = 'spec-item';
+                    specItem.innerHTML = `
+                        <span class="spec-label">${key}</span>
+                        <span class="spec-value">${value}</span>
+                    `;
+                    specGrid.appendChild(specItem);
+                });
+            } else {
+                const noSpecs = document.createElement('div');
+                noSpecs.style.gridColumn = '1 / -1';
+                noSpecs.style.textAlign = 'center';
+                noSpecs.style.padding = '20px';
+                noSpecs.style.color = '#666';
+                noSpecs.innerHTML = '📝 Nu sunt specificații disponibile pentru acest produs.';
+                specGrid.appendChild(noSpecs);
+            }
+
+            // Actualizează titlul paginii
+            document.title = `${product.name} - PC Components`;
+        }
+
+        // Schimbăm cantitatea, nu și soarta!
+        function changeQuantity(delta) {
+            const input = document.getElementById('quantity');
+            const newValue = Math.max(1, Math.min(99, parseInt(input.value) + delta));
+            input.value = newValue;
+        }
+
+        // Adăugăm în coș, dar nu și la greutate!
+        function addToCart() {
+            if (!currentProduct) return;
+
+            const quantity = parseInt(document.getElementById('quantity').value);
+            if (quantity > currentProduct.stock) {
+                if (typeof cart !== 'undefined' && cart.showNotification) {
+                    cart.showNotification('Cantitatea depășește stocul disponibil!', 'error');
+                } else {
+                    showLocalNotification('Cantitatea depășește stocul disponibil!', 'error');
+                }
+                return;
+            }
+
+            // Folosește instanța globală cart (din script.js)
+            if (typeof cart === 'undefined') {
+                window.cart = new ShoppingCart();
+            }
+            
+            // Adaugă produsul cu cantitatea selectată
+            for (let i = 0; i < quantity; i++) {
+                cart.addToCart({
+                    name: currentProduct.name,
+                    price: currentProduct.price,
+                    image: currentProduct.image_url
+                });
+            }
+            
+            // Afișează notificarea pentru cantitatea totală adăugată
+            if (typeof cart !== 'undefined' && cart.showNotification) {
+                cart.showNotification('produs adaugat in cos', 'success');
+            } else {
+                showLocalNotification('produs adaugat in cos', 'success');
+            }
+        }
+
+        // Afișăm erorile, sperăm să nu fie prea multe!
+        function showError(message) {
+            document.getElementById('loading').innerHTML = `
+                <div style="color: #ff6b6b; font-size: 1.5rem;">
+                    ❌ ${message}
+                </div>
+                <a href="cartonase.html" class="back-btn" style="margin-top: 20px;">
+                    ← Înapoi la produse
+                </a>
+            `;
+        }
+
+        // Notificări rapide, ca mesajele de la mama!
+        function showLocalNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                color: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Adaugă animații CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Încarcă produsul când pagina se încarcă
+        document.addEventListener('DOMContentLoaded', loadProduct);
+    </script>
+<script>
+// Navbar scroll hide/show
+let lastScroll = 0;
+const nav = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll <= 0) {
+    nav.style.transform = 'translateY(0)';
+    return;
+  }
+  if (currentScroll > lastScroll) {
+    // scroll down
+    nav.style.transform = 'translateY(-120%)';
+  } else {
+    // scroll up
+    nav.style.transform = 'translateY(0)';
+  }
+  lastScroll = currentScroll;
+});
+</script>
+</body>
+</html>

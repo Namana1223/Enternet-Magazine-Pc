@@ -1,0 +1,213 @@
+<!-- Înscrie-te, nu doare! -->
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Înregistrare - PC Components</title>
+  <link rel="stylesheet" href="register.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="auth-container">
+    <a href="index.html" class="back-btn">
+  <span class="icon">&#8592;</span> Înapoi
+</a>
+<style>
+.back-btn {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: max-content;
+  padding: 12px 32px;
+  background: linear-gradient(90deg, #5eead4 0%, #2563eb 100%);
+  border-radius: 28px;
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 20px #2563eb22;
+  border: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  letter-spacing: 0.03em;
+  position: relative;
+}
+.back-btn .icon {
+  font-size: 1.25em;
+  margin-right: 0.6em;
+  vertical-align: middle;
+}
+.back-btn:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #5eead4 100%);
+  box-shadow: 0 8px 32px #2563eb33;
+  transform: translateY(-2px) scale(1.035);
+}
+</style>
+    
+    
+    <div class="auth-header">
+      <h1>🚀 Înregistrare</h1>
+      <p>Creează-ți contul pentru a începe să faci cumpărături</p>
+    </div>
+    
+    <div id="message"></div>
+    
+    <form id="registerForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">Prenume *</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Nume *</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="username">Username *</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Telefon</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Adresa</label>
+        <input type="text" id="address" name="address">
+      </div>
+      
+      <div class="form-group">
+        <label for="city">Oraș</label>
+        <input type="text" id="city" name="city">
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Parolă *</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmPassword">Confirmă parola *</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+      
+      <button type="submit" class="submit-btn" id="submitBtn">
+        Creează contul
+      </button>
+    </form>
+    
+    <div class="auth-footer">
+      <p>Ai deja un cont? <a href="login.html">Autentifică-te aici</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Funcție pentru afișarea mesajelor
+    function showMessage(message, type = 'error') {
+      const messageDiv = document.getElementById('message');
+      messageDiv.innerHTML = `<div class="${type}-message">${message}</div>`;
+      
+      if (type === 'success') {
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 2000);
+      }
+    }
+    
+    // Funcție pentru validarea formularului
+    function validateForm() {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      
+      if (password !== confirmPassword) {
+        showMessage('Parolele nu se potrivesc!');
+        return false;
+      }
+      
+      if (password.length < 6) {
+        showMessage('Parola trebuie să aibă cel puțin 6 caractere!');
+        return false;
+      }
+      
+      return true;
+    }
+    
+    // Funcție pentru trimiterea datelor către backend
+    async function sendRegistrationData(data) {
+      try {
+        // Salvează datele într-un fișier JSON temporar
+        const response = await fetch('data:application/json;base64,' + btoa(JSON.stringify(data)));
+        
+        // Simulează procesarea
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // În realitate, aici ar trebui să trimit datele către backend
+        // Pentru moment, simulăm o înregistrare reușită
+        return {
+          success: true,
+          message: 'Cont înregistrat cu succes!',
+          user: {
+            id: Date.now(),
+            username: data.username,
+            email: data.email
+          }
+        };
+      } catch (error) {
+        return {
+          success: false,
+          error: 'Eroare la înregistrare: ' + error.message
+        };
+      }
+    }
+    
+    // Handler pentru înregistrare
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      if (!validateForm()) {
+        return;
+      }
+      
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Se creează contul...';
+      
+      const formData = new FormData(e.target);
+      const data = {
+        username: formData.get('username'),
+        email: formData.get('email'),
+        password: formData.get('password'),
+        first_name: formData.get('firstName'),
+        last_name: formData.get('lastName'),
+        phone: formData.get('phone'),
+        address: formData.get('address'),
+        city: formData.get('city')
+      };
+      
+      try {
+        const result = await sendRegistrationData(data);
+        
+        if (result.success) {
+          showMessage(result.message, 'success');
+          // Salvează informațiile utilizatorului în localStorage
+          localStorage.setItem('user', JSON.stringify(result.user));
+        } else {
+          showMessage(result.error);
+        }
+      } catch (error) {
+        showMessage('Eroare la înregistrare. Încearcă din nou.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Creează contul';
+      }
+    });
+  </script>
+</body>
+</html>

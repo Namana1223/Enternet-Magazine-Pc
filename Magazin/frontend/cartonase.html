@@ -1,0 +1,223 @@
+<!-- Aici începe magia, cu un document HTML  , ma daca nuti place ma supar raule vezi ce citesti-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componente PC - Catalog</title>
+  <link rel="stylesheet" href="cartonase.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <ul>
+        <li class="logo">
+          <img src="assets/img/Logo_pc.png" alt="Logo magazin" />
+        </li>
+        <div class="nav-center">
+          <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a></li>
+          <li><a href="cartonase.html"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg></a></li>
+          <li><a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg></a></li>
+          <li><a href="register.html"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f"><path d="M720-400v-120H600v-80h120v-120h80v120h120v80H800v120h-80Zm-360-80q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z"/></svg></a></li>
+          <li><a href="cart.html"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#703BCC"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></a></li>
+        </div>
+      </ul>
+    </div>
+  </header>
+
+<h1>📦 Catalog Produse</h1>
+
+<div id="mainArea"></div>
+
+<script>
+  let products = [];
+  let categories = [];
+  let filteredProducts = [];
+  const perPage = 12;
+  let selectedCategory = null;
+  let currentPage = 1;
+
+  // Obiect cu imaginile pentru fiecare categorie
+  const categoryImages = {
+    'Procesoare (CPU)': 'https://cdn.mos.cms.futurecdn.net/dpxySY7GWp6Fn2Vo37nf34.jpg',
+    'Plăci de bază (Motherboard)': 'https://www.pcguide.com/wp-content/uploads/2024/09/ASUS-ROG-Strix-X870E-E-Gaming-WiFi-mobo-and-box-Image-by-PC-Guide.jpg',
+    'Plăci video (GPU)': 'https://www.techpowerup.com/review/nvidia-geforce-rtx-4090-founders-edition-custom-designs-unboxing/images/asus-package1.jpg',
+    'Memorie RAM': 'https://geek.md/image/cache/catalog/products/27696-G/Kingston%20FURY%20Beast%20RGB%20EXPO%20Black,%20DIMM,%20DDR5,%2064%20GB%20(2%20x%2032%20GB),%206400%20MHz%20(KF564C32BBEAK2-64)%20(1)-500x500.webp',
+    'SSD / HDD': 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/esupport/esupport-pages/internal-ssd-sata-m2-nvme-comparison.png',
+    'Carcase PC': 'https://xstore.md/images/category/Carcasa-PC.png',
+    'Surse de alimentare (PSU)': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Q3Q9J9-glIONWmmNv7gpb6PQeaaH9qr0Bg&s',
+    'Sisteme de răcire': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK_jirSZGcF8juI9MwHyrBWxeTHJRxIwgVFDzlxPUuzVDyNNH1jWIFBko6KO_KKAvSL78&usqp=CAU',
+    'Plăci de sunet': 'https://aboutpc.weebly.com/uploads/1/3/2/4/13249182/5864232_orig.jpeg',
+    'Monitoare': 'https://xstore.md/images/product/thumbs/2025/07/monitor-viewsonic-vx2779a-hd-pro-xstore-md-62.jpg',
+    'Tastaturi': 'https://lcdn.mediagalaxy.ro/media/catalog/product/t/a/tastatura_gaming_mecanica_marvo_kg901c_01_e642de83.jpg',
+    'Mouse-uri': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa3axAKVWzSIDN9FkdqDJcBhqpkvQm_dDFpw&s',
+    'Căști / Headset-uri': 'https://www.installhouse.ro/continut/produse/2277/1000/casti-wireless-over-ear-anker-soundcore-space-one-adaptive-active-noise-cancelling-ldac-hi-res-bluetooth-5-3-negru_6358.webp',
+    'Boxe': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqrN6H6gDm4NfwpwSU6cItxEHFrUmpT6TX2w&s',
+    'Webcam-uri': 'https://m.media-amazon.com/images/I/61oxDdEAUaS.jpg',
+    'Microfoane': 'https://www.casamuzicii.md/storage/upload/cache/category_images/25/300X300_category_images_1523022967_0ed3c654c970f685ffaf52377186e379.jpeg.png',
+    'Mousepad-uri': 'https://cdn.ozone.ro/media/slider/image/2023/01/os_main_500h500_05_cacaca.jpg',
+    'Cabluri și adaptoare': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj_NIHPkz8bnwLUgp05rFL6Ujz6pci-K8i7w&s',
+    'Standuri / Suporturi': 'https://cdn-ultra.esempla.com/storage/webp/b9524683-d238-4eaa-ae74-eb6be8ce5898.webp',
+    'Iluminare RGB': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCD-UZ26kaZBLzMhn75jJmU-_5RDVTo7jQVA&s',
+    'Laptopuri': 'https://m.media-amazon.com/images/I/71IsafDXnKL.jpg',
+    'Sisteme PC preconfigurate': 'https://compulsiontech.co.nz/cdn/shop/files/DSC00376.png?v=1727383898&width=3438',
+    'Routere': 'https://i.pcmag.com/imagery/reviews/066JaVXcTjMYxKiWFInqP95-1.fit_lim.size_919x518.v1656596840.png',
+    'Plăci de rețea': 'https://totuldesprecalculatoare.weebly.com/uploads/5/4/9/0/5490906/published/3102678.png?1578869104',
+    'Adaptoare Wi-Fi': 'https://cdn-ultra.esempla.com/storage/webp/0e646dd7-1e4c-4201-9252-11b568ea5233.webp',
+    'Cabluri de rețea': 'https://depozitulcubaterii.ro/continut/produse/826/1000/cablu-de-retea-plat-ugreen-ethernet-rj45-cat-6-utp-8m-negru_2780.jpg',
+    'Licențe Windows / Office': 'https://s1.cel.ro/images/mari/2024/08/21/licenta-windows-11-pro-oem-reactivabila-css-win11prooem.jpg',
+    'Software antivirus': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ptgG6YD2xyxYErXFIHydCwWOnzX3ZLh52g&s',
+    'Licențe pentru jocuri și platforme': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjDbPf5u-7e-BP7n7jLpOMQXOXQuOppv3Glw&s',
+    'Console': 'https://store.ee.co.uk/images/product/uni2/DigitalContent/600x450/hh/HHCW_310DBE5B-6DF5-4809-B8F8-62F7024FAF62_large.jpg',
+    'Controller-e': 'https://e.cdnmoldcell.md/products/6014903/Sony-Controller-PS5-BT-DualShock-White-03.jpg',
+    'Accesorii gaming': 'https://s13emagst.akamaized.net/products/49578/49577203/images/res_0afc85e90f757169ca4cdf2c8739cd25.png',
+    'Scaune și birouri de gaming': 'https://www.scauneonline.ro/image/cache/OFF300/birou-gaming-off-300-5-550x550.jpg.webp'
+  };
+
+  async function loadProducts() {
+    const res = await fetch("products.json");
+    products = await res.json();
+    // extrage categoriile unice
+    categories = Array.from(new Set(products.map(p => p.category).filter(c => c && c !== 'Oferte speciale' && c !== 'Produse la reducere' && c !== 'Produse resigilate sau refurbished' && c !== '__TO_BE_REMOVED__')));
+    showCategories();
+  }
+
+  function showCategories() {
+    selectedCategory = null;
+    currentPage = 1;
+    const main = document.getElementById("mainArea");
+    main.innerHTML = '<div class="products-container" id="categoryArea"></div>';
+    const container = document.getElementById("categoryArea");
+    categories.forEach(cat => {
+      if (cat === 'Oferte speciale' || cat === 'Produse la reducere' || cat === 'Produse resigilate sau refurbished') return;
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.style.cursor = "pointer";
+      card.onclick = () => showProductsForCategory(cat);
+      const imageUrl = categoryImages[cat] || "https://via.placeholder.com/200x150?text=" + encodeURIComponent(cat);
+      card.innerHTML = `
+        <img src="${imageUrl}" alt="${cat}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="placeholder">${cat}</div>
+        <div class="product-name">${cat}</div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function showProductsForCategory(cat) {
+    selectedCategory = cat;
+    filteredProducts = products.filter(p => p.category === cat);
+    currentPage = 1;
+    renderProducts();
+  }
+
+  function renderProducts() {
+    const main = document.getElementById("mainArea");
+    main.innerHTML = `
+      <div style="text-align: center;">
+        <button onclick="showCategories()" class="back-button">&larr; Înapoi la categorii</button>
+      </div>
+      <div class="products-container" id="productArea"></div>
+      <div class="pagination" id="paginationArea"></div>
+    `;
+    const container = document.getElementById("productArea");
+    container.innerHTML = "";
+    const start = (currentPage - 1) * perPage;
+    const end = start + perPage;
+    const pageItems = filteredProducts.slice(start, end);
+    pageItems.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.style.cursor = "pointer";
+      card.innerHTML = `
+        <div class="product-image-container" onclick="openProductDetail(${p.id})">
+          <img src="${p.image_url}" alt="Product" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder">Nothing To See Here</div>
+        </div>
+        <div class="product-info-container">
+          <div class="product-name" onclick="openProductDetail(${p.id})">${p.name}</div>
+          <div class="product-price">${p.price} MDL</div>
+          <button onclick="addToCartFromCategory('${p.name}', '${p.image_url}', '${p.price} MDL')" class="add-to-cart-btn">
+            🛒 Adaugă în coș
+          </button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+    updatePagination();
+  }
+
+  function updatePagination() {
+    const totalPages = Math.max(1, Math.ceil(filteredProducts.length / perPage));
+    const pagDiv = document.getElementById("paginationArea");
+    pagDiv.innerHTML = `
+      <button onclick="prevPage()">&lt;</button>
+      <span id="pageIndicator">${currentPage}/${totalPages}</span>
+      <button onclick="nextPage()">&gt;</button>
+    `;
+  }
+
+  function nextPage() {
+    const totalPages = Math.max(1, Math.ceil(filteredProducts.length / perPage));
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderProducts();
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderProducts();
+    }
+  }
+
+  // Funcție pentru deschiderea paginii de detalii produs
+  function openProductDetail(productId) {
+    window.location.href = `product.html?id=${productId}`;
+  }
+
+  loadProducts();
+
+  // La încărcare, verifică dacă există parametru de categorie în URL
+  window.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    if (cat) {
+      // Dacă există, așteaptă să se încarce produsele, apoi filtrează și afișează direct produsele
+      const checkLoaded = setInterval(function() {
+        if (products && products.length) {
+          clearInterval(checkLoaded);
+          showProductsForCategory(cat);
+        }
+      }, 30);
+    } else {
+      // Fără parametru, afișează categoriile
+      showCategories();
+    }
+  });
+
+  // Navbar scroll behavior
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('.navbar');
+  
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scrolling down - hide navbar
+      navbar.style.transform = 'translateY(-100%)';
+    } else {
+      // Scrolling up - show navbar
+      navbar.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
